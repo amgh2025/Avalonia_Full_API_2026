@@ -1,0 +1,26 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:MyApp.ViewModels"
+        x:Class="MyApp.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        mc:Ignorable="d"
+        Title="MyApp"
+        Width="500" Height="300">
+
+    <Grid RowDefinitions="Auto,*">
+        <ComboBox Grid.Row="0"
+                  Margin="20"
+                  Width="180"
+                  HorizontalAlignment="Left"
+                  ItemsSource="{Binding Periods}"
+                  SelectedItem="{Binding SelectedPeriod}" />
+
+        <TextBlock Grid.Row="1"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="18"
+                   Text="{Binding SelectedPeriod}" />
+    </Grid>
+</Window>
